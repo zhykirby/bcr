@@ -37,7 +37,7 @@ axios.interceptors.response.use((res) => {
   return Promise.reject(err)
 })
 
-const baseURL = 'http://localhost:3000/users'
+const baseURL = 'http://47.102.105.123:3000/users'
 
 const $http = axios.create({
   baseURL: baseURL
