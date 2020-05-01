@@ -1205,9 +1205,11 @@ export default {
     },
     submitForm(formName) {
       let allInfo = this.ruleForm
+      let name = localStorage.getItem('user')
       allInfo = JSON.stringify(allInfo)
       this.$http.post('/add', {
-        allInfo: allInfo
+        allInfo: allInfo,
+        name: name
       }).then(res => {
         if (res.code === 200) {
           this.$message({message: '添加成功', type: 'success'})
