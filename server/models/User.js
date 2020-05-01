@@ -96,5 +96,5 @@ const userInfo = new Schema({
         job: String,
         hasAB: String
     }
-},{collection:'user'})
+},{collection:'userA'})
 module.exports = mongoose.model('User', userInfo)

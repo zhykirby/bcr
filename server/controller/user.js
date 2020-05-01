@@ -20,7 +20,7 @@ if (!ret) {
 
 const reg = async(ctx) => {
     let postData = ctx.request.body
-    let name = postData.name
+    let name = postData.userName
     let qqID = postData.qqID
     let password = postData.password
     let hasUser = await User.find({name:name}).lean().exec((err, docs) => {return docs})
@@ -30,7 +30,7 @@ const reg = async(ctx) => {
             msg: '已经注册'
         }
     } else {
-        let userId = await getNextSequenceValue('user')
+        let userId = await getNextSequenceValue('userA')
         let user = new User({
             userName: name,
             userId: userId,

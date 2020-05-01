@@ -30,8 +30,8 @@
             <el-form-item label="游戏ID" prop="name">
                 <el-input v-model="regForm.name"></el-input>
             </el-form-item>
-            <el-form-item label="QQ-ID(不是qq号)" prop="qq">
-                <el-input v-model="regForm.qq"></el-input>
+            <el-form-item label="QQ-ID(不是qq号)" prop="qqID">
+                <el-input v-model="regForm.qqID"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="password">
                 <el-input type="password" v-model="regForm.password"></el-input>
@@ -149,7 +149,7 @@ export default {
 .bg{
     width: 100vw;
     height: 100vh;
-    background-image: url('../../assets/img/abstract.jpg');
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;

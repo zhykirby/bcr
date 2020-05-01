@@ -18,7 +18,7 @@ const GroupSchema = new Schema({
     group13: String,
     group14: String,
     group15: String,
-},{collection:'group'})
+},{collection:'groupA'})
 
 const Group = mongoose.model('Group', GroupSchema);
 
