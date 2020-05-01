@@ -100,25 +100,17 @@ export default {
                     }, 500)
                     return
                 }
-                this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        // todo:简单验证用户登录
-                        this.$http.post('/login', {
-                            userName: name, password: password
-                        }).then(res => {
-                            if (res.code === 200) {
-                                localStorage.setItem('user', name)
-                                this.$message({message: '登录成功', type: 'success'})
-                                setTimeout(resolve => {
-                                    this.$router.push('/main')
-                                }, 500)
-                            } else {
-                                this.$message({message: '用户名或密码错误，请重新输入', type: 'error'})
-                                return false
-                            }
-                        })
+                this.$http.post('/login', {
+                    userName: name, password: password
+                }).then(res => {
+                    if (res.code === 200) {
+                        localStorage.setItem('user', name)
+                        this.$message({message: '登录成功', type: 'success'})
+                        setTimeout(resolve => {
+                            this.$router.push('/main')
+                        }, 500)
                     } else {
-                        this.$message({message: '输入格式错误', type: 'error'})
+                        this.$message({message: '用户名或密码错误，请重新输入', type: 'error'})
                         return false
                     }
                 })
@@ -126,25 +118,17 @@ export default {
                 const name = this.regForm.name
                 const qqID = this.regForm.qqID
                 const password = this.regForm.password
-                this.$refs[formName].validate((valid) => {
-                    if (valid) {
-                        // todo:简单验证用户登录
-                        this.$http.post('/reg', {
-                            userName: name, password: password, qqID: qqID
-                        }).then(res => {
-                            if (res.code === 200) {
-                                localStorage.setItem('user', name)
-                                this.$message({message: '注册成功', type: 'success'})
-                                setTimeout(resolve => {
-                                    this.$router.push('/main')
-                                }, 500)
-                            } else {
-                                this.$message({message: '用户名已注册', type: 'error'})
-                                return false
-                            }
-                        })
+                this.$http.post('/reg', {
+                    userName: name, password: password, qqID: qqID
+                }).then(res => {
+                    if (res.code === 200) {
+                        localStorage.setItem('user', name)
+                        this.$message({message: '注册成功', type: 'success'})
+                        setTimeout(resolve => {
+                            this.$router.push('/main')
+                        }, 500)
                     } else {
-                        this.$message({message: '输入格式错误', type: 'error'})
+                        this.$message({message: '用户名已注册', type: 'error'})
                         return false
                     }
                 })

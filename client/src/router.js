@@ -24,7 +24,7 @@ router.beforeEach((to, from, next) => {
   })
   line.animate(0.8, {duration: 500})
   if (to.matched.some(record => record.meta.requireAuth)) {
-    if (!localStorage.getItem('user') || !localStorage.getItem('admin')) {
+    if (!localStorage.getItem('user') && !localStorage.getItem('admin')) {
       next({
         path: '/'
       })
